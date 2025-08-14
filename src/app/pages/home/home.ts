@@ -110,18 +110,18 @@ export class Home implements OnInit {
             this.error = null;
           },
           error: (err) => {
-            this.error = 'Error al obtener los detalles de los Pokémon.';
-            this.loading = false;
-            console.error(err);
-          }
-        });
+          this.error = 'Error fetching Pokemon details.';
+          this.loading = false;
+          console.error(err);
+        }
+      });
       } else {
         this.filteredPokemons = [];
-        this.error = 'No se encontraron Pokémon que coincidan.';
+        this.error = 'No matching Pokemon found.';
         this.loading = false;
       }
     } else {
-      this.error = 'La lista de Pokémon aún no ha sido cargada. Inténtalo de nuevo en unos segundos.';
+      this.error = 'The list of Pokemon has not been loaded yet. Please try again in a few seconds.';
       this.loading = false;
     }
   }
