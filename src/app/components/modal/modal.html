@@ -1,0 +1,110 @@
+<div class="modal-overlay" [ngClass]="{'show': pokemon}" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        @if (pokemon) {
+        <div class="modal-header">
+            <h2 class="text-capitalize">{{ pokemon.name }}</h2>
+            <button class="close-btn" (click)="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="image-container">
+            <img [src]="getPokemonImageUrl(pokemon)" [alt]="pokemon.name">
+            </div>
+
+            <div class="types-container">
+            @for (type of pokemon.types; track type.slot) {
+                <span class="badge" [style.backgroundColor]="getTypeColor(type.type.name)">
+                {{ type.type.name }}
+                </span>
+            }
+            </div>
+            
+            <div class="stats-container">
+            @for (stat of pokemon.stats; track stat.stat.name) {
+                <div class="stat-item">
+                <div class="stat-name text-capitalize">{{ stat.stat.name }}</div>
+                <div class="stat-bar-container">
+                    <div #bar class="stat-bar" [style.width.%]="getStatPercentage(stat.base_stat)">{{ stat.base_stat }}</div>
+                </div>
+                </div>
+            }
+            </div><hr>
+
+            <div class="accordion-container">
+                <div class="accordion-item" (click)="toggleSection('moves')">
+                    <h3>Moves by level</h3>
+                    <button class="accordion-toggle-btn">{{ activeSection === 'moves' ? '-' : '+' }}</button>
+                </div>
+                @if (activeSection === 'moves') {
+                    <div class="accordion-content p-0">
+                        @if (loadingMoves) {
+                            <p class="text-center p-3 m-0">Loading moves...</p>
+                        } @else if (movesByLevelUp.length === 0) {
+                            <p class="p-3 m-0">Does not learn attacks by level in this version.</p>
+                        } @else {
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover m-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Level</th>
+                                            <th>Move</th>
+                                            <th>Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (move of movesByLevelUp; track move.name) {
+                                            <tr>
+                                                <td>{{ move.level }}</td>
+                                                <td class="text-capitalize">{{ move.name }}</td>
+                                                <td>
+                                                    <span class="type-badge-sm" [style.backgroundColor]="getTypeColor(move.type)">
+                                                        {{ move.type }}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                    </div>
+                }
+
+                <!-- <div class="accordion-item" (click)="toggleSection('locations')">
+                    <h3>Game Locations</h3>
+                    <button class="accordion-toggle-btn">{{ activeSection === 'locations' ? '-' : '+' }}</button>
+                </div>
+                @if (activeSection === 'locations') {
+                    <div class="accordion-content p-0">
+                        @if (pokemonLocations.length === 0) {
+                            <p class="p-3 m-0">Unknown Location.</p>
+                        } @else {
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover m-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Location</th>
+                                            <th>Game</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (location of pokemonLocations; track location.location_area.name) {
+                                            <tr>
+                                                <td>{{ location.location_area.name }}</td>
+                                                <td>
+                                                    @for (version of location.version_details; track version.version.name) {
+                                                        <span class="badge text-bg-secondary">{{ version.version.name }}</span>
+                                                    }
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                    </div>
+                } -->
+            </div>
+        </div>
+        }
+    </div>
+</div>
