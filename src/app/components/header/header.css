@@ -1,6 +1,7 @@
 .navbar{
     padding: 20px;
-    background: linear-gradient(90deg, rgb(158, 51, 51) 0%, rgb(158, 51, 51) 50%, rgb(128, 32, 32) 100%);
+    background: #800909;
+    background: linear-gradient(90deg, rgba(128, 9, 9, 1) 65%, rgba(224, 224, 224, 1) 100%);
 }
 .navbar-brand {
     font-size: 2rem;
