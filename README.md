@@ -1,10 +1,12 @@
 # Getting Started
 ## Backend Setup (Django & MySQL)
+````Bash
+cd backend
+````
 1. Open your terminal and navigate into the backend directory.
 2. Install the required Python dependencies by running the following command:
 ````Bash
 pip install -r requirements.txt
-
 ````
 3. Set up your MySQL database. Make sure you have the correct connection details (username, password, and database name) configured in your Django settings.  
 4. Run the database migrations to create the necessary tables:
@@ -13,6 +15,9 @@ python manage.py migrate
 ```
 
 ## Frontend Setup (Angular)
+````Bash
+cd frontend
+````
 1. Open a new terminal window and navigate to the root directory of your project (where the package.json file is located).
 2. Install the Angular dependencies by running this command:
 ```Bash
@@ -31,3 +36,16 @@ ng serve
 ```
 
 This will compile the application and launch it on a local server, usually at http://localhost:4200.
+
+## Screenshots
+### 1 Login Page
+<img width="1866" height="778" alt="image" src="https://github.com/user-attachments/assets/089d2c5d-3dde-4793-bb6f-747dc7dd34b9" />
+
+### 2 Register Page
+<img width="1755" height="766" alt="image" src="https://github.com/user-attachments/assets/db9e0f3f-2d5c-48e2-b1fb-12b7adb63b18" />
+
+### 3 Pokemon Data Center
+<img width="1665" height="887" alt="image" src="https://github.com/user-attachments/assets/d54f6d01-7071-4a37-85ca-133e0bdeb3ff" />
+
+
+
