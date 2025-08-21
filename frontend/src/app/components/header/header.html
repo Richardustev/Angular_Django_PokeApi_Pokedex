@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top deepseek-navbar">
+    <div class="container">
+        <a class="navbar-brand deepseek-brand" href="#">
+        <i class="fas fa-brain me-2"></i>Pokedex!
+        </a>
+        
+        <div class="d-flex">
+        <!-- Mostrar botón de cerrar sesión solo si está autenticado -->
+        @if (isAuthenticated) {
+            <button class="btn btn-logout" (click)="logout()">
+            <i class="fas fa-sign-out-alt me-1"></i> Log Out!
+            </button>
+        }
+        </div>
+    </div>
+</nav>

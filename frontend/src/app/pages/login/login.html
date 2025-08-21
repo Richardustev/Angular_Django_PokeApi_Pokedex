@@ -1,0 +1,77 @@
+<div class="mb-5"></div>
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg">
+            <div class="card-body p-5">
+                <h2 class="card-title text-center mb-4">Log In</h2>
+                
+                @if (errorMessage()) {
+                    <div class="alert alert-danger" role="alert">
+                    {{ errorMessage() }}
+                    </div>
+                }
+
+                <form (ngSubmit)="onSubmit()">
+                    <!-- Campo de usuario -->
+                    <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="username" 
+                        [value]="credenciales().username"
+                        (input)="onInput('username', $event)"
+                        [disabled]="isLoading()"
+                        required>
+                    <!-- @if (!credenciales().username) {
+                        <div class="text-danger mt-1">Username Required</div>
+                    } -->
+                    </div>
+
+                    <!-- Campo de contraseña -->
+                    <div class="mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="password" 
+                        [value]="credenciales().password"
+                        (input)="onInput('password', $event)"
+                        [disabled]="isLoading()"
+                        required>
+                    <!-- @if (!credenciales().password) {
+                        <div class="text-danger mt-1">Password Required</div>
+                    } -->
+                    </div>
+
+                    <!-- Botón de envío -->
+                    <div class="d-grid">
+                    <button 
+                        type="submit" 
+                        class="btn btn-danger btn-lg"
+                        [disabled]="!credenciales().username || !credenciales().password || isLoading()">
+                        @if (!isLoading()) {
+                        <span>Log In</span>
+                        } @else {
+                        <span>
+                            <span class="spinner-border spinner-border-sm" role="status"></span>
+                            Processing...
+                        </span>
+                        }
+                    </button>
+                    </div>
+                </form>
+
+                <!-- Enlaces adicionales -->
+                <!-- <div class="text-center mt-4">
+                    <a routerLink="/recuperar-contraseña" class="text-decoration-none">Forgot you password?</a>
+                </div> -->
+                <div class="text-center mt-2">
+                    <span>Don't have an accout yet? <a routerLink="/register" class="text-decoration-none text-danger">Register</a></span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

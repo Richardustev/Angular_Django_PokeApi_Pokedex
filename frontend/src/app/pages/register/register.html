@@ -1,0 +1,80 @@
+<div class="mb-5"></div>
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-lg">
+                <div class="card-body p-5">
+                    <h2 class="card-title text-center mb-4">Register</h2>
+
+                    @if (errorMessage()) {
+                        <div class="alert alert-danger" role="alert">
+                            {{ errorMessage() }}
+                        </div>
+                    }
+
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="username" 
+                                name="username"
+                                [value]="credenciales().username"
+                                (input)="onInput('username', $event)"
+                                [disabled]="isLoading()"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="email" 
+                                name="email"
+                                [value]="credenciales().email"
+                                (input)="onInput('email', $event)"
+                                [disabled]="isLoading()"
+                                required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Password</label>
+                            <input 
+                                type="password" 
+                                class="form-control" 
+                                id="password" 
+                                name="password"
+                                [value]="credenciales().password"
+                                (input)="onInput('password', $event)"
+                                [disabled]="isLoading()"
+                                required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button 
+                                type="submit" 
+                                class="btn btn-danger btn-lg"
+                                [disabled]="!credenciales().username || !credenciales().email || !credenciales().password || isLoading()">
+                                @if (!isLoading()) {
+                                <span>Register</span>
+                                } @else {
+                                <span>
+                                    <span class="spinner-border spinner-border-sm" role="status"></span>
+                                    Processing...
+                                </span>
+                                }
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-2">
+                        <span>Already have an account? <a routerLink="/login" class="text-decoration-none text-danger">Log In</a></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

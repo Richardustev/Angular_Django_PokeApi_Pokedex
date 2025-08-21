@@ -1,0 +1,43 @@
+.main-content {
+    flex: 1;
+    padding: 2rem 2rem;
+}
+
+.deepseek-footer {
+    background-color: #0d1117;
+    border-top: 1px solid #21262d;
+    padding: 1.5rem 0;
+    margin-top: auto;
+}
+
+.deepseek-brand {
+    color: #f42222;
+    font-weight: 600;
+}
+
+.deepseek-text {
+    color: #8b949e;
+}
+
+.deepseek-link {
+    color: #f42222;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.deepseek-link:hover {
+    color: #f42222;
+}
+
+.divider {
+    color: #21262d;
+    margin: 0 0.5rem;
+}
+
+.version-badge {
+    background-color: #f42222;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+}

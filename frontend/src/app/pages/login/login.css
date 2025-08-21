@@ -1,0 +1,55 @@
+:host {
+display: block;
+background-color: #fff;
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+
+.card {
+border: none;
+border-radius: 1rem;
+overflow: hidden;
+}
+
+.card-title {
+color: #333;
+font-weight: 600;
+}
+
+.btn-primary {
+background-color: #667eea;
+border-color: #667eea;
+transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+background-color: #5a6fd8;
+border-color: #5a6fd8;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form-control {
+border-radius: 0.5rem;
+padding: 0.75rem 1rem;
+border: 1px solid #ddd;
+transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+border-color: #667eea;
+box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.text-decoration-none {
+color: #667eea;
+transition: color 0.3s ease;
+}
+
+.text-decoration-none:hover {
+color: #5a6fd8;
+}
+
+.shadow-lg {
+box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
