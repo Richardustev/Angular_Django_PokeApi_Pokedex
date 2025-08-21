@@ -48,6 +48,7 @@ This will compile the application and launch it on a local server, usually at ht
 <img width="1665" height="887" alt="image" src="https://github.com/user-attachments/assets/d54f6d01-7071-4a37-85ca-133e0bdeb3ff" />
 
 ### 4 Pokemon Details
-<img width="709" height="760" alt="image" src="https://github.com/user-attachments/assets/fef1fcc0-2628-45cb-9d93-d9c3f39af68f" />
+<img width="1883" height="896" alt="image" src="https://github.com/user-attachments/assets/fccddb11-5956-4297-b4ce-3c7c084aa4f5" />
+
 
 
